@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightTriiger : MonoBehaviour
+public class LightTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject sparkle;
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        Debug.Log("tRIIGER");
+        sparkle.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit(Collider other)
     {
-        
+        Debug.Log("Exit");
+        sparkle.SetActive(true);
     }
 }

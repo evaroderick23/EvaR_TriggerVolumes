@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class DisapearTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject leave;
+
+    private void OnTriggerEnter(Collider other)
     {
         
+        leave.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit(Collider other)
     {
         
+        leave.SetActive(true);
     }
 }
